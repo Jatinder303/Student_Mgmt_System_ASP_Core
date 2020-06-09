@@ -1,0 +1,50 @@
+﻿@page
+@model Student_Mgmt_System_ASP_Core.Pages.Course_Details.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Course_details</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Course_details.course_ID" />
+            <div class="form-group">
+                <label asp-for="Course_details.course_Name" class="control-label"></label>
+                <input asp-for="Course_details.course_Name" class="form-control" />
+                <span asp-validation-for="Course_details.course_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course_details.start_date" class="control-label"></label>
+                <input asp-for="Course_details.start_date" class="form-control" />
+                <span asp-validation-for="Course_details.start_date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course_details.end_date" class="control-label"></label>
+                <input asp-for="Course_details.end_date" class="form-control" />
+                <span asp-validation-for="Course_details.end_date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course_details.course_duration" class="control-label"></label>
+                <input asp-for="Course_details.course_duration" class="form-control" />
+                <span asp-validation-for="Course_details.course_duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
